@@ -24,7 +24,7 @@ type PatchSegmentInstruction struct {
 	// The segment's target type
 	TargetType string `json:"targetType"`
 	// The time, in Unix milliseconds, when the user should be removed from this segment. Required if <code>kind</code> is <code>addExpireUserTargetDate</code> or <code>updateExpireUserTargetDate</code>.
-	Value *int32 `json:"value,omitempty"`
+	Value *int64 `json:"value,omitempty"`
 	// The version of the segment to update. Required if <code>kind</code> is <code>updateExpireUserTargetDate</code>.
 	Version *int32 `json:"version,omitempty"`
 }
@@ -122,9 +122,9 @@ func (o *PatchSegmentInstruction) SetTargetType(v string) {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *PatchSegmentInstruction) GetValue() int32 {
+func (o *PatchSegmentInstruction) GetValue() int64 {
 	if o == nil || o.Value == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Value
@@ -132,7 +132,7 @@ func (o *PatchSegmentInstruction) GetValue() int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchSegmentInstruction) GetValueOk() (*int32, bool) {
+func (o *PatchSegmentInstruction) GetValueOk() (*int64, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *PatchSegmentInstruction) HasValue() bool {
 }
 
 // SetValue gets a reference to the given int32 and assigns it to the Value field.
-func (o *PatchSegmentInstruction) SetValue(v int32) {
+func (o *PatchSegmentInstruction) SetValue(v int64) {
 	o.Value = &v
 }
 
